@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:8080"
+    baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_API
 })
 
 export class BaseService {
@@ -17,7 +17,7 @@ export class BaseService {
     }
 
     buscarUsuarioPorId(id : number) {
-        return axiosInstance.get("/usuario/" + id)
+        return axiosInstance.get(this.url + "/" + id)
     }
 
     inserir(objeto : any) {

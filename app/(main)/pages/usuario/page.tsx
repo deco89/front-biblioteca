@@ -295,9 +295,9 @@ const Usuario = () => {
                         rowsPerPageOptions={[5, 10, 25]}
                         className="datatable-responsive"
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Mostrando {first} até {last} de {totalRecords} usuarios"
+                        currentPageReportTemplate="Mostrando {first} até {last} de {totalRecords} usuários"
                         globalFilter={globalFilter}
-                        emptyMessage="Nenhum produto encontrado."
+                        emptyMessage="Nenhum usuário encontrado."
                         header={header}
                         responsiveLayout="scroll"
                     >
