@@ -175,12 +175,16 @@ const Usuario = () => {
     });    
     };
 
-    const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, name: string) => {
+    const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, nome: string) => {
         const val = (e.target && e.target.value) || '';
-        let _usuario = { ...usuario };
-        _usuario[`${name}`] = val;
+        // let _usuario = { ...usuario };
+        // _usuario[`${name}`] = val;
 
-        setUsuario(_usuario);
+        // setUsuario(usuario);
+        setUsuario(prevUsuario => ({
+            ...prevUsuario,
+            [nome]: val,
+        }));
     };
 
     const leftToolbarTemplate = () => {
@@ -303,7 +307,7 @@ const Usuario = () => {
                     >
                         <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
                         <Column field="id" header="Código" sortable body={idBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
-                        <Column field="name" header="Nome" sortable body={nomeBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
+                        <Column field="nome" header="Nome" sortable body={nomeBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="login" header="Login" sortable body={loginBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="email" header="Email" sortable body={emailBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column body={actionBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
@@ -378,7 +382,7 @@ const Usuario = () => {
                             <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                             {usuario && (
                                 <span>
-                                    Tem certeza que deseja excluir <b>{usuario.name}</b>?
+                                    Tem certeza que deseja excluir <b>{usuario.nome}</b>?
                                 </span>
                             )}
                         </div>
