@@ -5,11 +5,11 @@ declare namespace Projeto {
         login: string;
         senha?: string;
         email?: string;
-        category?: string;
-        quantity?: number;
-        inventoryStatus?: InventoryStatus;
-        rating?: number;
-        orders?: ProductOrder[];
-        [key: string]: string | string[] | number | boolean | undefined | ProductOrder[] | InventoryStatus;
     };
+
+    type Recurso = {
+        id?: number;
+        nome: string;
+        chave: string;
+    }
 }
