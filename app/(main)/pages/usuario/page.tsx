@@ -33,7 +33,7 @@ const Usuario = () => {
     const [globalFilter, setGlobalFilter] = useState('');
     const toast = useRef<Toast>(null);
     const dt = useRef<DataTable<any>>(null);
-    const usuarioService = useMemo(() => new UsuarioService(), []) ;
+    const usuarioService = useMemo(() => new UsuarioService(), []);
 
     useEffect(() => {
         if(!usuarios) {
