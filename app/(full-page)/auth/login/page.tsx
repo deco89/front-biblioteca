@@ -16,9 +16,7 @@ const LoginPage = () => {
     const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
 
-    const [password, setPassword] = useState('');
     const [checked, setChecked] = useState(false);
-
     const { layoutConfig } = useContext(LayoutContext);
 
     const router = useRouter();
