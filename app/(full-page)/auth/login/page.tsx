@@ -25,7 +25,7 @@ const LoginPage = () => {
     const loginService = useMemo(() => new LoginService(), []);
 
     const toast = useRef<Toast>(null);
-    
+
     const efetuarLogin = () => {
         loginService.login(login, senha).then((response) => {
             console.log('Login realizado com sucesso');
@@ -34,13 +34,13 @@ const LoginPage = () => {
             localStorage.setItem('TOKEN_APLICACAO_FRONTEND', response.data.token);
 
             router.push('/');
-            // window.location.reload();
+            window.location.reload();
         }).catch(() => {
             toast.current?.show({
                 severity: 'error',
                 summary: 'Erro!',
                 detail: 'Login ou senha está incorreto.'
-                });   
+                });
         });
     }
 
@@ -79,7 +79,7 @@ const LoginPage = () => {
                                 </div> */}
                                 <a className="font-medium no-underline ml-2 text-right cursor-pointer" style={{ color: 'var(--primary-color)' }} onClick={() => router.push('/auth/newuser')}>
                                     Sou novo por aqui!
-                                </a>                                
+                                </a>
                                 <a className="font-medium no-underline ml-2 text-right cursor-pointer" style={{ color: 'var(--primary-color)' }}>
                                     Esqueci minha senha
                                 </a>
@@ -89,7 +89,7 @@ const LoginPage = () => {
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     );
 };
 

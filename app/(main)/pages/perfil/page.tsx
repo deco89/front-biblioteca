@@ -16,7 +16,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 const Perfil = () => {
     let perfilVazio: Projeto.Perfil = {
         id: 0,
-        descricao: ''        
+        descricao: ''
     };
 
     const [perfis, setPerfils] = useState<Projeto.Perfil[] | null>(null);
@@ -36,7 +36,7 @@ const Perfil = () => {
             perfilService.listarTodos()
                 .then((response) => {
                     console.log(response.data);
-                    setPerfils(response.data);      
+                    setPerfils(response.data);
                 }).catch((error) => {
                     console.log(error);
                 })
@@ -185,8 +185,8 @@ const Perfil = () => {
 
         //JEITO CERTO
         setPerfil(prevPerfil => ({
-             ...prevPerfil,
-             [name]: val,
+            ...prevPerfil,
+            [name]: val,
         }));
     };
 
@@ -292,7 +292,7 @@ const Perfil = () => {
                     >
                         <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
                         <Column field="id" header="Código" sortable body={idBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
-                        <Column field="descricao" header="Descrição" sortable body={descricaoBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>                        
+                        <Column field="descricao" header="Descrição" sortable body={descricaoBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column body={actionBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
                     </DataTable>
 
@@ -312,7 +312,7 @@ const Perfil = () => {
                             />
                             {submitted && !perfil.descricao && <small className="p-invalid">Descrição é obrigatório.</small>}
                         </div>
-                        
+
                     </Dialog>
 
                     <Dialog visible={deletePerfilDialog} style={{ width: '450px' }} header="Confirmar" modal footer={deletePerfilDialogFooter} onHide={hideDeletePerfilDialog}>
